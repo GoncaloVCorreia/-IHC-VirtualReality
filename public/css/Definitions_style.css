@@ -1,0 +1,22 @@
+.body{
+    background-color: #282b34;
+    text-align: center;
+    margin-top: 15%;
+}
+.label{
+    color: white;
+}
+.button{
+    margin-top: 5rem;
+    height: 1.5rem;
+    width: 15rem;
+    color: black;
+}
+.slides{
+    width: 15%;
+    height: 2.5rem;
+}
+.values{
+    color: white;
+}
+

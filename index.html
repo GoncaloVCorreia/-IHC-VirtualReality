@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"   href="/css/Home_Index_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <title>MuzzPuzzle</title>
+</head>
+<html>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.4/aframe/build/aframe-ar.js"></script>
+    
+    <div class="params">
+      <h1>Estilo : <%= tipo %></h1>
+      <h1>Música : <%= music %></h1>
+    </div>
+
+     <i class="fas fa-list" onclick="myFunction()" ></i>
+
+     <div class="dropdown-content" id="myDropdown">
+      <% for(var i=0; i<lista.length;i++){ %>
+        <a class="tasks" href="#"> <%= lista[i] %></a>
+      
+        <%} %>
+      </div>
+
+    <script>
+        function myFunction() {
+            console.log("tou aqui")
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+    </script>
+     <i class="fas fa-undo" onclick="location.href=window.location.href"></i>
+      <body style='margin : 0px; overflow: hidden;'>
+        
+      
+        <a-scene embedded arjs >
+         
+          <a-marker preset="hiro">
+
+              <a-box position='0 0.5 0' material='color: yellow;'>
+                <a-animation attribute="rotation"
+                dur="3000"
+                to="360 360 0"
+                repeat="indefinite"
+                easing="linear">
+                </a-animation>
+              </a-box>
+
+          </a-marker>
+          <a-entity camera></a-entity>
+        </a-scene>
+      </body>
+    </html>

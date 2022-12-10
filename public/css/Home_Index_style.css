@@ -1,0 +1,102 @@
+.menu{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12%;
+    
+}
+.body{
+  background-color: #282b34;
+}
+.menuButtons{
+    height: 5rem;
+    width: 20rem;
+    margin-top: 2rem;
+    background: linear-gradient(to right,#98DE5B,#08E1Ae);
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.fa-list{
+    right: 20px;
+    top: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+}
+
+.dropdown-content {
+    right: 60px;
+    top: 60px;
+    display: none;
+    position: absolute;
+    background-color: #15171d;
+   
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: greenyellow;
+   
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: gray;
+  }
+  
+  .show {
+    display: block;
+  }
+  .tasks{
+    margin: 2rem 2rem 2rem 2rem;
+  }
+
+.fa-cog{
+  right: 20px;
+  bottom: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+}
+.fa-times{
+  left: 20px;
+  bottom: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+}
+.fa-undo{
+  left: 20px;
+  top: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+}
+
+.params {
+  z-index: 1;
+  position: absolute;
+  background-color:   #15171d;
+  color: greenyellow;
+  justify-content: space-around;
+  margin-left: 42%;
+  top: 20px;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.params h1{
+  font-size: 1.5rem;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"   href="/css/Pecas_style.css">
+    <link rel="stylesheet" type="text/css"   href="/css/Home_Index_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <title>MuzzPuzzle</title>
+</head>
+<html>
+    <body class="body">
+        <form action="/pecas" method="post">
+
+            <p class="label">Numero de Peças</p>
+            <div>
+            
+                    <input class="slides" type="range" id="pecas" name="pecas"min="2" max="6" oninput="this.nextElementSibling.value = this.value">
+                    <output class="values" name="currentValue" value="7">4</output>
+            
+            </div>
+            <p class="label">Dificuldade</p>
+            
+                <p id="choice_dif" >
+                
+                        <label><input type="checkbox" name="dif" value="1" class="button_ch"><span>Fácil</span></label>
+                        <label><input type="checkbox" name="dif" value="2" class="button_ch"><span>Médio</span></label>
+                        <label><input type="checkbox" name="dif" value="3" class="button_ch"><span>Difícil</span></label>
+                    
+                </p>
+                
+                <button class="button_confirm"  type="submit"> Escolher Temas</button>
+                
+            <i class="fas fa-times" onclick="location.href=window.location.origin " ></i>
+        
+       
+        </form>
+        
+    </body>
+</html>

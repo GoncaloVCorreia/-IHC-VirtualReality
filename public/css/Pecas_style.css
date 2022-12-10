@@ -1,0 +1,56 @@
+.body{
+    background-color: #282b34;
+    text-align: center;
+    margin-top: 5%;
+}
+.slides{
+    width: 15%;
+    height: 2.5rem;
+}
+.label{
+    color: white;
+}
+.values{
+    color: white;
+}
+.choice_dif{
+    display:inline;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#choice_dif input[type="checkbox"] {
+    display: none;
+    
+  }
+ 
+  #choice_dif span {
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    border: 2px solid white;
+    border-radius: 1rem;
+    color: white;
+    margin-left: 1rem;
+  }
+  
+  #choice_dif input[type="checkbox"]:checked + span {
+    background-color: green;
+    color: black;
+    
+  }
+
+  .button_confirm{
+    margin-top: 10rem;
+    height: 1.5rem;
+    width: 15rem;
+  }
+  .fa-times{
+    left: 20px;
+    bottom: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+  }

@@ -1,0 +1,21 @@
+.sobrepor{
+    z-index: 1;
+   margin-top: 10%;
+   margin-left: 45%;
+   color: white;
+   background-color:  #15171d;
+   padding:2rem;
+   width: 10%;
+   border-radius: 1.5rem;
+   text-align: center;
+}
+
+.contador{
+    font-size: medium;
+    
+}
+
+.piece{
+    cursor: pointer;
+
+}

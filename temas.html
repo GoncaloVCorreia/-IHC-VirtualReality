@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"   href="/css/Temas_style.css">
+    <link rel="stylesheet" type="text/css"   href="/css/Home_Index_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <title>MuzzPuzzle</title>
+</head>
+<html>
+    <script>
+        var subjectObject = {
+            "Rap": ["Drake","Lil Tjay","Kid laroi","Speed"],
+            "Pop": ["Rihana","Beyonce","One Direction","Maroon 5"],
+            "Rock":["Metalica", "MGK"],
+            "Jazz":["Miles Davis", "Louis Amstrong","Frank Sinatra"]
+        }
+        window.onload = function() {
+            var subjectSel = document.getElementById("subject");
+            var topicSel = document.getElementById("topic");
+            for (var x in subjectObject) {
+                subjectSel.options[subjectSel.options.length] = new Option(x, x);
+            }
+            subjectSel.onchange = function() {
+                //empty Chapters- and Topics- dropdowns
+                topicSel.length = 1;
+                //display correct values
+                z=subjectObject[this.value];
+                for (var i in z) {
+                    topicSel.options[topicSel.options.length] = new Option(z[i], z[i]);
+                }
+            }
+ 
+        }
+            
+
+    </script>
+
+    <div class="label">
+        <h2>Dificuldade : <%= dif %></h1>
+        <h2>Numero de Pecas : <%= numPecas %></h1>
+    <body class="body">
+        <form action="/temas" method="post">
+            <label for="music">Estilo de Música</label>
+            <select name="tipo" id="subject">
+                <option value="" selected="selected" required>Select subject</option>
+            </select>
+        </div>
+        
+            <div class="chooseArtist">
+                <label for="pet-select">Escolha um Artista:</label>
+                <select name="music" id="topic">
+                    <option value="" selected="selected" required>Please select subject first</option>
+                </select>
+            </div>
+            <i class="fas fa-times" onclick="location.href='http://localhost:8080/pecas' "></i>
+            <button class="button_confirm" type="submit"> Jogar </button>
+            
+    </form> 
+    </body>
+</html>

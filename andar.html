@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"   href="/css/andar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <title>MuzzPuzzle</title>
+</head>
+    <html>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+        <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+
+
+        <script>
+            let initPos=[];
+            let currPos=[];
+            async function myFunction() {
+                const button = document.querySelector(".find-location");
+                let dist=0;
+              
+                navigator.geolocation.getCurrentPosition(onSuccess,onError);
+
+                await sleep(3* 1000);
+                console.log(dist)
+               
+                
+                while(dist<10){
+
+                    navigator.geolocation.getCurrentPosition(onSuccess2,onError);
+                    await sleep(3* 1000);
+                    console.log("init Pos "+ initPos)
+                    console.log("Current Pos "+ currPos);
+                    var walked=distance(initPos[0],initPos[1],currPos[0],currPos[1])
+                    console.log("Walked Now: "+walked.toString());
+                   
+                    if(walked>1)
+                        dist=dist+walked/2;
+                    console.log("Distance Done: "+dist.toString());
+                   
+                    document.getElementById("p1").textContent=dist.toString()
+                    initPos=currPos;
+                   
+                    if(dist>=10){
+                        console.log("acabou")
+                        document.getElementById("latlong").setAttribute("scale","5 5 5")
+                    }
+                }
+
+                function sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+                function onSuccess(position){
+                  
+                    let longitude=position.coords.longitude;
+                    let latitude=position.coords.latitude;
+                    
+                    initPos=[latitude,longitude]
+                   
+                    
+                }
+                function onSuccess2(position){
+                  
+                  let longitude=position.coords.longitude;
+                  let latitude=position.coords.latitude;
+                 
+                  currPos=[latitude,longitude]
+ 
+              }
+           
+                function onError(error){
+                    console.log(error)
+                 
+                
+                }
+            
+                function distance(lat1, lon1, lat2, lon2, unit) {
+                    const R = 6371e3; // metres
+                    const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+                    const φ2 = lat2 * Math.PI/180;
+                    const Δφ = (lat2-lat1) * Math.PI/180;
+                    const Δλ = (lon2-lon1) * Math.PI/180;
+
+                    const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                            Math.cos(φ1) * Math.cos(φ2) *
+                            Math.sin(Δλ/2) * Math.sin(Δλ/2);
+                    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+                    const d = R * c; // in metres
+                    return d;
+                }
+            }
+
+
+        </script>
+
+        <div class="sobrepor">
+            Número de metros andados
+            <h2  id="p1" class="contador">0.0</h2>
+            <button class="find-location"  onclick="myFunction()">Começar</button>
+        </div>
+
+        
+        <body style='margin : 0px; overflow: hidden;'>
+            <script>
+                AFRAME.registerComponent('locationfinder',{
+                    init:function(){
+                        navigator.geolocation.getCurrentPosition(function(location){
+                            console.log(location);
+                        });
+                    }
+                });
+
+               
+            </script>
+           
+          <a-scene embedded arjs ="source:webcam;">
+           
+            <a-camera 
+                locationfinder 
+                gps-camera="simulateLatitude: -6.175628 ;simulateLongitude: 106.827188"
+                rotation-reader
+              
+            ></a-camera>
+            <a-entity
+                progressive-controls
+                color="yellow"
+                position="0 10 0"
+            ></a-entity>
+            
+            <a-box 
+              
+                clickable
+                event-set__click="scale:0 0 0"
+                color="red"
+                class="piece" 
+                id ="latlong"
+                value="" 
+                scale="0 0 0" 
+                rotation='0 0 0' 
+                animation__rotate='property: rotation; to: 0 360 0; dur: 5000; easing: linear; loop: true;'
+                gps-entity-place="latitude:-6.173708 ;longitude: 106.827184"
+               
+            ></a-box>
+
+          </a-scene>
+        
+
+        </body>
+    </html>

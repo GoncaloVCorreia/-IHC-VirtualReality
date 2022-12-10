@@ -1,0 +1,31 @@
+.body{
+    background-color: #282b34;
+    text-align: center
+}
+.chooseArtist{
+    color: white;
+    margin-top:5rem ;
+}
+.chooseStyle{
+    color: white;
+   
+    
+}
+.button_confirm{
+    margin-top: 10rem;
+    height: 1.5rem;
+    width: 15rem;
+  }
+  .label{
+    color: white;
+    margin-top: 5rem;
+  }
+  .fa-times{
+    left: 20px;
+    bottom: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+  }
