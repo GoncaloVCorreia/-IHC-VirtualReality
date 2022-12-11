@@ -8,19 +8,20 @@
     <title>MuzzPuzzle</title>
 </head>
 <html>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.4/aframe/build/aframe-ar.js"></script>
     
     <div class="params">
-      <h1>Estilo : <%= tipo %></h1>
-      <h1>Música : <%= music %></h1>
+      <h2>Estilo : <%= tipo %></h2>
+      <h2>Música : <%= music %></h2>
+      <h2>Pecas apanhadas   <%= num %>/<%= total %></h2>
     </div>
 
      <i class="fas fa-list" onclick="myFunction()" ></i>
 
      <div class="dropdown-content" id="myDropdown">
       <% for(var i=0; i<lista.length;i++){ %>
-        <a class="tasks" href="#"> <%= lista[i] %></a>
+        <a class="tasks"  onclick="location.href='andar' "> <%= lista[i] %></a>
       
         <%} %>
       </div>

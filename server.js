@@ -1,5 +1,7 @@
 
-let express=require('express')
+let express=require('express');
+const { rmSync } = require('fs');
+const { dirname } = require('path');
 let  app= express();
 const path = require('path');
 app.use(express.static("public"));
@@ -16,6 +18,10 @@ console.log("http://localhost:8080")
 
 let dificuldade=0;
 let numeroPecas=0;
+let pecasApanhadas=0;
+let lista=[];
+let tema;
+let artista;
 
 app.get('/', (req,res) => { 
     res.sendFile(__dirname+'/home.html')
@@ -66,8 +72,8 @@ app.get('/temas', (req,res) => {
 
 app.post('/temas', (req, res) => {
 
-    var tema = req.body.tipo;
-    var artista = req.body.music;
+     tema = req.body.tipo;
+     artista = req.body.music;
 
     console.log(tema)
     console.log(artista)
@@ -81,7 +87,7 @@ app.post('/temas', (req, res) => {
     flexoes=10*dificuldade
     abdomianais=10*dificuldade
     
-    var lista=[            
+     lista=[            
             "Andar "+ andar.toString()+ " metros", 
             "Fazer "+ numAchamanetnos.toString()+ " agachamentos",
             "Encontrar peça",
@@ -90,10 +96,31 @@ app.post('/temas', (req, res) => {
             "Fazer "+ abdomianais.toString() + " abdominais"
         
     ]
+     lista=[            
+        "Andar 10 metros", 
+        "Andar 10 metros", 
+        "Andar 10 metros", 
+        "Andar 10 metros", 
+        "Andar 10 metros", 
+        "Andar 10 metros", 
+    
+]
     lista =lista.slice(0,numeroPecas)
     console.log(lista)
-    res.render(path.join(__dirname,"/",'index.html'), {tipo: tema, music:artista, lista:lista});
+    res.render(path.join(__dirname,"/",'index.html'), {total:numeroPecas,num:pecasApanhadas,tipo: tema, music:artista, lista:lista});
 });
+
+app.get('/emjogo' , (req,res)=>{
+    pecasApanhadas=10
+    if(pecasApanhadas<numeroPecas){
+        res.render(path.join(__dirname,"/",'index.html'), {total:numeroPecas, num:pecasApanhadas, tipo: tema, music:artista, lista:lista});
+    }
+   else{
+    console.log("netrei aqui")
+    resposta="Speed"
+    res.render(path.join(__dirname,"/",'fazerPuzzle.html'), {resposta:resposta});
+   }
+})
 
 //Realidade Virtual
 app.get('/jogar', (req,res) => { 
@@ -105,3 +132,7 @@ app.get('/andar' , (req,res) =>{
 
     res.sendFile(__dirname+'/andar.html')
 });
+app.get('/increment', (req, res) => {
+    pecasApanhadas += 1;
+    console.log(pecasApanhadas)
+  });

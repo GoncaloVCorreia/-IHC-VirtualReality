@@ -15,6 +15,7 @@
         <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
         <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
         <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
         <script>
@@ -45,10 +46,13 @@
                    
                     document.getElementById("p1").textContent=dist.toString()
                     initPos=currPos;
-                   
+                    dist+=2;
                     if(dist>=10){
                         console.log("acabou")
                         document.getElementById("latlong").setAttribute("scale","5 5 5")
+                        $.get('/increment', (response) => {
+                            
+                        });
                     }
                 }
 
@@ -105,7 +109,7 @@
             <button class="find-location"  onclick="myFunction()">Começar</button>
         </div>
 
-        
+        <i class="fas fa-undo" onclick="location.href='emjogo'"></i>
         <body style='margin : 0px; overflow: hidden;'>
             <script>
                 AFRAME.registerComponent('locationfinder',{
@@ -128,9 +132,10 @@
               
             ></a-camera>
             <a-entity
-                progressive-controls
-                color="yellow"
                 position="0 10 0"
+                scale="2 2 2"
+                progressive-controls
+               
             ></a-entity>
             
             <a-box 

@@ -1,6 +1,6 @@
 .sobrepor{
     z-index: 1;
-   margin-top: 10%;
+   margin-top: 11%;
    margin-left: 45%;
    color: white;
    background-color:  #15171d;
@@ -19,3 +19,12 @@
     cursor: pointer;
 
 }
+.fa-undo{
+    left: 20px;
+    top: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+  }

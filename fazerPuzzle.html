@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"   href="/css/puzzle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <title>MuzzPuzzle</title>
+</head>
+<html>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+
+    <div class="sobrepor">
+        Advinha o puzzle
+        <input id="p1" class="tentativa" placeholder="Escreva aqui..." >
+        <button class="guess"  onclick="check()">Advinha</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function check(){
+            // Get the value of the input field with id="numb"
+            let x = document.getElementById("p1").value;
+            console.log(x)
+            resposta= "<%= resposta %>"
+            if(x==resposta){
+                text="Parabéns! Acertou"
+            }
+            else{
+                text="Tente novamente"
+            }
+            document.getElementById("result").innerHTML=text
+        }
+    </script>
+
+
+    <body>
+        
+  
+        <a-scene embedded arjs>
+            <a-entity progressive-controls></a-entity>
+            
+   
+           
+            
+           <a-box color="blue" position="-1.5 3 -7" grabbable ></a-box >
+
+            <a-box color="red" position ="-1.5 0 -7" grabbable></a-box >
+
+          </a-scene>
+
+
+    </body>
+    
+</html>
