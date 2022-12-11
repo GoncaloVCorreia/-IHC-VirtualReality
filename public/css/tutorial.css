@@ -1,6 +1,6 @@
 .fa-times{
     left: 20px;
-    bottom: 20px;
+    bottom: -320px;
     font-size: 2.5rem;
     color: white;
     cursor: pointer;
@@ -13,4 +13,12 @@
     text-align: center;
     margin-top: 5%;
     color: white;
+}
+
+.image{
+  width: 40rem;
+  height:30rem;
+}
+.confirmar{
+  margin-bottom: 10rem;
 }

@@ -141,19 +141,3 @@ app.get('/increment', (req, res) => {
     console.log(pecasApanhadas)
   });
 
-  app.get('/audios/audioTest1.mp3',(req,res)=>{
-   
-    player.play(__dirname+'/audios/audioTest1.mp3')
-  });
-  app.get('/audios/audioTest2.mp3',(req,res)=>{
-   
-    player.play(__dirname+'/audios/audioTest2.mp3')
-  });
-  app.get('/audios/audioTest3.mp3',(req,res)=>{
-   
-    player.play(__dirname+'/audios/audioTest3.mp3')
-  });
-  app.get('/audios/audioTest4.mp3',(req,res)=>{
-   
-    player.play(__dirname+'/audios/audioTest4.mp3')
-  });
