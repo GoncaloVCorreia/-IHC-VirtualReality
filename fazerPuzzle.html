@@ -9,17 +9,26 @@
 </head>
 <html>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
 
     <div class="sobrepor">
         Advinha o puzzle
         <input id="p1" class="tentativa" placeholder="Escreva aqui..." >
         <button class="guess"  onclick="check()">Advinha</button>
         <p id="result"></p>
+    </div>
+    <div class="legenda">
+        <p class="option">Toque para ouvir música</p>
+        <p class="option"  onclick="pecaAzulAudio()">-> Peca azul</p>
+        <p class="option"  onclick="pecaVermelhalAudio()">-> Peca vermelha</p>
+        <p class="option"  onclick="pecaVerdeAudio()">-> Peca verde</p>
+        <p class="option"  onclick="pecaAmarelaAudio()">-> Peca amarela</p>
     </div>
     <script>
         function check(){
@@ -34,22 +43,56 @@
                 text="Tente novamente"
             }
             document.getElementById("result").innerHTML=text
-        }
+        };
+        function pecaAzulAudio(){
+            console.log("audio azul")
+            let audio = new Audio('audios/audioTest1.mp3');
+          
+        };
+        function pecaVermelhalAudio(){
+            console.log("audio vermelho")
+            let audio = new Audio('audios/audioTest2.mp3');
+            
+        };
+        function pecaVerdeAudio(){
+            console.log("audio verde")
+            let audio = new Audio('audios/audioTest3.mp3');
+           
+        };
+        function pecaAmarelaAudio(){
+            console.log("audio amarelo")
+            let audio = new Audio('audios/audioTest4.mp3');
+            
+        };
     </script>
-
+   
 
     <body>
-        
+       
   
         <a-scene embedded arjs>
             <a-entity progressive-controls></a-entity>
             
    
-           
-            
-           <a-box color="blue" position="-1.5 3 -7" grabbable ></a-box >
 
-            <a-box color="red" position ="-1.5 0 -7" grabbable></a-box >
+            <a-box color="white" position="-2.5 2 -7.1"  ></a-box >
+
+            <a-box color="white" position ="-0.75 2 -7.1"  ></a-box >
+                
+            <a-box color="white" position ="0.75 2 -7.1"  ></a-box >
+    
+            <a-box color="white" position ="2.5 2 -7.1"  ></a-box >
+
+
+
+
+           <a-box color="blue" position="-1.5 3 -6.8"  grabbable></a-box >
+
+            <a-box color="red" position ="-1.5 0 -6.3" grabbable ></a-box >
+            
+            <a-box color="yellow" position ="-1.5 -3 -5.1" grabbable ></a-box >
+
+            <a-box color="green" position ="1.5 3 -6.8" grabbable ></a-box >
 
           </a-scene>
 

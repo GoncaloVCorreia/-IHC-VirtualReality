@@ -3,6 +3,7 @@ let express=require('express');
 const { rmSync } = require('fs');
 const { dirname } = require('path');
 let  app= express();
+let player = require('play-sound')(opts = {})
 const path = require('path');
 app.use(express.static("public"));
 
@@ -22,6 +23,7 @@ let pecasApanhadas=0;
 let lista=[];
 let tema;
 let artista;
+
 
 app.get('/', (req,res) => { 
     pecasApanhadas=0;
@@ -112,13 +114,13 @@ app.post('/temas', (req, res) => {
 });
 
 app.get('/emjogo' , (req,res)=>{
-   
+   pecasApanhadas=10;
     if(pecasApanhadas<numeroPecas){
         res.render(path.join(__dirname,"/",'index.html'), {total:numeroPecas, num:pecasApanhadas, tipo: tema, music:artista, lista:lista});
     }
    else{
     console.log("netrei aqui")
-    resposta="Speed"
+    resposta="Paradise"
     res.render(path.join(__dirname,"/",'fazerPuzzle.html'), {resposta:resposta});
    }
 })
@@ -137,4 +139,21 @@ app.get('/andar' , (req,res) =>{
 app.get('/increment', (req, res) => {
     pecasApanhadas += 1;
     console.log(pecasApanhadas)
+  });
+
+  app.get('/audios/audioTest1.mp3',(req,res)=>{
+   
+    player.play(__dirname+'/audios/audioTest1.mp3')
+  });
+  app.get('/audios/audioTest2.mp3',(req,res)=>{
+   
+    player.play(__dirname+'/audios/audioTest2.mp3')
+  });
+  app.get('/audios/audioTest3.mp3',(req,res)=>{
+   
+    player.play(__dirname+'/audios/audioTest3.mp3')
+  });
+  app.get('/audios/audioTest4.mp3',(req,res)=>{
+   
+    player.play(__dirname+'/audios/audioTest4.mp3')
   });
