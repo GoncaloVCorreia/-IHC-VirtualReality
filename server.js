@@ -24,6 +24,7 @@ let tema;
 let artista;
 
 app.get('/', (req,res) => { 
+    pecasApanhadas=0;
     res.sendFile(__dirname+'/home.html')
 });
 //tutorial
@@ -111,7 +112,7 @@ app.post('/temas', (req, res) => {
 });
 
 app.get('/emjogo' , (req,res)=>{
-    pecasApanhadas=10
+   
     if(pecasApanhadas<numeroPecas){
         res.render(path.join(__dirname,"/",'index.html'), {total:numeroPecas, num:pecasApanhadas, tipo: tema, music:artista, lista:lista});
     }
@@ -124,6 +125,7 @@ app.get('/emjogo' , (req,res)=>{
 
 //Realidade Virtual
 app.get('/jogar', (req,res) => { 
+    pecasApanhadas=0;
     console.log(dificuldade)
     console.log(numeroPecas)
     res.sendFile(__dirname+'/index.html')
