@@ -4,26 +4,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"   href="/css/Definitions_style.css">
-    <link rel="stylesheet" type="text/css"   href="/css/Home_Index_style.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <title>MuzzPuzzle</title>
 </head>
 <html>
     <body class="body">
-        <p class="label">Volume</p>
-        <div>
-        <input class="slides" type="range" id="pecas" name="pecas"min="0" max="100" oninput="this.nextElementSibling.value = this.value">
-        <output class="values">50</output>
-        </div>
-        <p class="label">Tamanho de letra</p>
-        <div>
-        <input class="slides" type="range" id="pecas" name="pecas"min="1" max="100" oninput="this.nextElementSibling.value = this.value">
-        <output class="values">50</output>
+        <h1>Definições</h1>
+        <div style="text-align:center">
+            <div style="display:inline-block; text-align:left">
+                <p class="label">Volume</p>
+            </div>
         </div>
 
-        <i class="fas fa-times"  onclick="location.href=window.location.origin+''"></i>
-        <button class="button" onclick="location.href=window.location.origin+''"> Confirmar</button>
+
+        <div style="text-align:center">
+            <div style="display:inline-block; text-align:left">
+                <div class="range-container">
+                    <input class="slides" type="range" id="pecas" name="pecas"min="0" max="100" oninput="this.nextElementSibling.value = this.value"> 
+                    <output class="values">50</output>                  
+                </div>
+            </div>
+        </div>
+        
+        
+        <div style="text-align:center">
+            <div style="display:inline-block; text-align:left">
+                <p class="label">Tamanho de letra</p>
+            </div>
+        </div>
+        
+
+        
+         
+            <!-- <label for="range">50</label> -->
+       
+
+
+        <div style="text-align:center">
+            <div style="display:inline-block; text-align:left">
+                <div class="range-container">
+                    <input class="slides" type="range" id="pecas" name="pecas"min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+                    <output class="values">50</output>
+                </div>
+            </div>
+        </div>
+        
+
+
+        
+        <div style="text-align:center">
+            <div style="display:inline-block; text-align:left">
+                <button class="menuButtons" onclick="location.href=window.location.origin+''"> Confirmar</button>
+            </div>
+        </div>
            
+
+        <div class="cross">
+            <i class="fas fa-times"  onclick="location.href=window.location.origin+''"></i>
+        </div>
+        
         
     </body>
 </html>

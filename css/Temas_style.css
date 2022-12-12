@@ -1,0 +1,97 @@
+.body{
+  text-align: center;
+  font-size: 1.5rem;
+  color: aliceblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: conic-gradient(at -10% 50%, #000045, cyan);
+  font-family: 'Audiowide';
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+form{
+  color: aliceblue;
+  margin-top: 4rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+
+.chooseArtist{
+    color: white;
+    margin-top: 4rem;
+    margin-bottom:5rem ;
+}
+.chooseStyle{
+    color: white;
+}
+
+h1{
+  color: #dd6e42;
+  margin-bottom: 3rem;
+}
+h2{
+  margin-bottom: 2rem;
+}
+
+.cross{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.menuButtons{
+  height: 5rem;
+  width: 20rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right,#dd6e42,#e8dab2);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 2.5vmin;
+  font-family: 'Audiowide';
+  color:black;
+}
+
+
+.menuButtons{
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.menuButtons:after{
+  content: "";
+  background: linear-gradient(to right,#e8dab2, #dd6e42);
+  border-radius: 0.4rem;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.menuButtons:hover:after{
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+.menuButtons, .confirm{
+  padding: 13px 50px 13px;
+  border-radius: 0.4rem;
+}
+}

@@ -1,0 +1,179 @@
+.menu{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12vh;
+  margin-bottom: 28vh;
+}
+
+
+h1{
+font-size:9vh;
+background: -webkit-linear-gradient(#dd6e42,  white);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: 'Audiowide';
+text-align: center;
+}
+
+.body{
+background-size: cover;
+background-repeat: no-repeat;
+background: conic-gradient(at -10% 50%, #000045, cyan);
+margin-bottom: 36vh;
+}
+
+
+.menuButtons, .confirm{
+  height: 5rem;
+  width: 20rem;
+  margin-top: 2rem;
+  background: linear-gradient(to right,#dd6e42,#e8dab2);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 2.5vmin;
+  font-family: 'Audiowide';
+  color:black;
+}
+
+
+.menuButtons, .confirm {
+padding: 13px 20px 13px;
+outline: 0;
+border: 1px solid black;
+border-radius: 0.4rem;
+cursor: pointer;
+position: relative;
+background-color: rgba(0, 0, 0, 0);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.menuButtons:after, .confirm:after{
+content: "";
+background: linear-gradient(to right,#e8dab2, #dd6e42);
+border-radius: 0.4rem;
+width: 100%;
+z-index: -1;
+position: absolute;
+height: 100%;
+top: 7px;
+left: 7px;
+transition: 0.2s;
+}
+
+.menuButtons:hover:after, .confirm:hover:after{
+top: 0px;
+left: 0px;
+}
+
+@media (min-width: 768px) {
+.menuButtons, .confirm{
+  padding: 13px 50px 13px;
+  border-radius: 0.4rem;
+}
+}
+
+.confirm{
+margin-bottom: 35.5vh;
+font-family: 'Audiowide';
+}
+.menuButtons{
+margin-bottom: 2rem;
+}
+
+.fa-list{
+  right: 20px;
+  top: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+}
+
+.dropdown-content {
+  right: 60px;
+  top: 60px;
+  display: none;
+  position: absolute;
+  background-color: #15171d;
+ 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: greenyellow;
+ 
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: gray;
+}
+
+.show {
+  display: block;
+}
+.tasks{
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.fa-cog{
+right: 3rem;
+bottom: 3rem;
+font-size: 2.5rem;
+color: white;
+cursor: pointer;
+z-index: 1;
+position: absolute;
+}
+.fa-times{
+left: 3rem;
+bottom: 3rem;
+font-size: 2.5rem;
+color: white;
+cursor: pointer;
+z-index: 1;
+position: absolute;
+}
+.fa-undo{
+left: 3rem;
+top: 3rem;
+font-size: 2.5rem;
+color: white;
+cursor: pointer;
+z-index: 1;
+position: absolute;
+}
+
+.params {
+z-index: 1;
+position: absolute;
+background-color:   #15171d;
+color: greenyellow;
+justify-content: space-around;
+margin-left: 42%;
+top: 20px;
+padding: 1rem;
+border-radius: 1rem;
+}
+.params h1{
+font-size: 1.5rem;
+}
+.container{
+margin-left: auto;
+margin-right: auto;
+}
+.label{
+display: inline-block;
+text-align: left;
+font-size: 2rem;
+font-family: 'Audiowide';
+}
