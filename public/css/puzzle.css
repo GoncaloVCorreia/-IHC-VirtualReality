@@ -25,3 +25,15 @@
 .option{
     font-size: 1.5rem;
 }
+.check{
+    left: 20px;
+    top: 20px;
+   
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    color: white;
+    background-color:  #15171d;
+    text-align: center;
+    display:table-column
+}

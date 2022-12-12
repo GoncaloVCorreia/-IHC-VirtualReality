@@ -25,24 +25,97 @@
     </div>
     <div class="legenda">
         <p class="option">Toque para ouvir música</p>
-        <p class="option"  onclick="pecaAzulAudio()">-> Peca azul</p>
-        <p class="option"  onclick="pecaVermelhalAudio()">-> Peca vermelha</p>
-        <p class="option"  onclick="pecaVerdeAudio()">-> Peca verde</p>
-        <p class="option"  onclick="pecaAmarelaAudio()">-> Peca amarela</p>
+        <p class="option"  onclick="pecaAzulAudio()">-> Peça azul</p>
+        <p class="option"  onclick="pecaVermelhalAudio()">-> Peça vermelha</p>
+        <p class="option"  onclick="pecaVerdeAudio()">-> Peça verde</p>
+        <p class="option"  onclick="pecaAmarelaAudio()">-> Peça amarela</p>
     </div>
+    <button class="check" onclick="checkPuzzle()">Check</button>
     <script>
         function check(){
             // Get the value of the input field with id="numb"
             let x = document.getElementById("p1").value;
             console.log(x)
-            resposta= "<%= resposta %>"
-            if(x==resposta){
-                text="Parabéns! Acertou"
+            if(checkPuzzle()){
+                resposta= "<%= resposta %>"
+                
+                if(x==resposta){
+                    text="Parabéns! Acertou"
+                }
+                else{
+                    text="Tente novamente"
+                }
+                document.getElementById("result").innerHTML=text
             }
             else{
-                text="Tente novamente"
+                text="Comlete primeiro o puzzle pela ordem certa"
+                document.getElementById("result").innerHTML=text
             }
-            document.getElementById("result").innerHTML=text
+            function checkPuzzle(){
+                var correct=0
+
+                const red=document.getElementById('red');
+                const posRed=red.getAttribute('position');
+                const xRed=posRed.x
+                const yRed=posRed.y
+                const zRed=posRed.z
+                console.log(posRed)
+                if((-1.3< xRed && xRed <-0.2) && (1.2<yRed && yRed<2.5 )&& (-8.5<zRed && zRed<-5)){
+                    correct+=1
+                    console.log("vermelho bem")
+                }
+
+                const blue=document.getElementById('blue')
+                const posBlue=blue.getAttribute('position')
+                const xBlue=posBlue.x
+                const yBlue=posBlue.y
+                const zBlue=posBlue.z
+                console.log(posBlue)
+                
+            
+
+                if((-3<xBlue && xBlue < -1.8) && (1.5<yBlue && yBlue<2.5) && (-8.5<zBlue && zBlue<-5)){
+                    correct+=1
+                    console.log("azul bem")
+                }
+                
+
+                const green=document.getElementById('green')
+                const posGreen=green.getAttribute('position')
+                const xGreen=posGreen.x
+                const yGreen=posGreen.y
+                const zGreen=posGreen.z
+                console.log(posGreen)
+                if((0.3<xGreen && xGreen<1.3) && (1.5<yGreen && yGreen<2.5) && (-8.5<zGreen && zGreen<-5)){
+                    correct+=1
+                    console.log("verde bem")
+                }
+
+                const yellow=document.getElementById('yellow')
+                const posYellow=yellow.getAttribute('position')
+                const xYellow=posYellow.x
+                const yYellow=posYellow.y
+                const zYellow=posYellow.z
+                console.log(posYellow)
+                if((1.9< xYellow && xYellow <3.1) && (1.5<yYellow && yYellow<2.5) && (-8.5<zYellow && zYellow<-5)){
+                    correct+=1
+                    console.log("amarelo bem")
+                }
+
+                if(correct==4){
+                    console.log("acertou")
+                    return true
+                
+                }
+                else{
+                    console.log("errou")
+                    return false
+                }
+
+
+            
+        }
+            
         };
         function pecaAzulAudio(){
             console.log("audio azul")
@@ -68,6 +141,7 @@
             audio.play();
             
         };
+        
     </script>
    
 
@@ -80,26 +154,26 @@
             <a-text value="Coloque os excertos musicais pela ordem da sequencia musical" color="black"  scale="1 1 1" position="-2 3.5 -6"></a-text>
 
             <a-box material="color: white; opacity: 0.5; transparent: true" position="-2.5 2 -7.1" ></a-box >
-            <a-text value="Primeiro Excerto" color="green" scale="0.5 0.5 0.5" position="-2.6 1.4 -6"></a-text>
+            <a-text value="Primeiro Excerto" color="black" scale="0.5 0.5 0.5" position="-2.6 1.4 -6"></a-text>
 
             <a-box material="color: white; opacity: 0.5; transparent: true" position ="-0.75 2 -7.1"  ></a-box >
-            <a-text value="Segundo Excerto" color="green" scale="0.5 0.5 0.5" position="-1 1.4 -6"></a-text>
+            <a-text value="Segundo Excerto" color="black" scale="0.5 0.5 0.5" position="-1 1.4 -6"></a-text>
                 
             <a-box material="color: white; opacity: 0.5; transparent: true" position ="0.75 2 -7.1"  ></a-box >
-            <a-text value="Terceiro Excerto" color="green" scale="0.5 0.5 0.5" position="0.35 1.4 -6"></a-text>
+            <a-text value="Terceiro Excerto" color="black" scale="0.5 0.5 0.5" position="0.35 1.4 -6"></a-text>
     
             <a-box material="color: white; opacity: 0.5; transparent: true" position ="2.5 2 -7.1"  ></a-box >
-            <a-text value="Quarto Excerto" color="green" scale="0.5 0.5 0.5" position="2 1.4 -6"></a-text>
+            <a-text value="Quarto Excerto" color="black" scale="0.5 0.5 0.5" position="2 1.4 -6"></a-text>
 
 
 
-           <a-box color="blue" position="-1.5 3 -6.8"  grabbable></a-box >
+           <a-box id="blue" color="blue" position="-1.5 3 -6.8"  grabbable></a-box >
 
-            <a-box color="red" position ="-1.5 0 -6.3" grabbable ></a-box >
+            <a-box id="red" color="red" position ="-1.5 0 -6.3" grabbable ></a-box >
             
-            <a-box color="yellow" position ="-1.5 -3 -5.1" grabbable ></a-box >
+            <a-box id="yellow" color="yellow" position ="-1.5 -3 -5.1" grabbable ></a-box >
 
-            <a-box color="green" position ="1.5 3 -6.8" grabbable ></a-box >
+            <a-box  id = "green" color="green" position ="1.5 3 -6.8" grabbable ></a-box >
 
           </a-scene>
 
