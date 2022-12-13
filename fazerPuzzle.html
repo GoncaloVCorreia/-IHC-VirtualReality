@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"   href="/css/puzzle.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <title>MuzzPuzzle</title>
 </head>
@@ -17,19 +18,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-    <div class="sobrepor">
-        Advinha o puzzle
-        <input id="p1" class="tentativa" placeholder="Escreva aqui..." >
-        <button class="guess"  onclick="check()">Advinha</button>
+        
+        <h1 class="objective">Coloque os cubos pela ordem correta, de forma a completar a música.</h1>
+        <div class="parent">
+            <div class="params">
+                Qual é a música?
+                <input id="p1" class="tentativa" placeholder="Escreva aqui..." >
+                <button class="menuButtons"  onclick="check()">Responder</button>
+            </div>
+        </div>
+
+        
         <p id="result"></p>
     </div>
-    <div class="legenda">
-        <p class="option">Toque para ouvir música</p>
-        <p class="option"  onclick="pecaAzulAudio()">-> Peça azul</p>
-        <p class="option"  onclick="pecaVermelhalAudio()">-> Peça vermelha</p>
-        <p class="option"  onclick="pecaVerdeAudio()">-> Peça verde</p>
-        <p class="option"  onclick="pecaAmarelaAudio()">-> Peça amarela</p>
+
+
+    <div class="parent2" style="display: flex;">
+        
+        <div class="legenda" style="display:inline-block; text-align:left">
+            <p> Toque para ouvir música</p>
+            <p   onclick="pecaAzulAudio()">Peça azul</p>
+            <p  onclick="pecaVermelhalAudio()">Peça vermelha</p>
+            <p   onclick="pecaVerdeAudio()">Peça verde</p>
+            <p onclick="pecaAmarelaAudio()">Peça amarela</p>
+        </div>
     </div>
+    
+
 
     <script>
         function check(){
@@ -40,15 +55,15 @@
                 resposta= "<%= resposta %>"
                 
                 if(x==resposta){
-                    text="Parabéns! Acertou"
+                    text="Parabéns! Acertou!"
                 }
                 else{
-                    text="Tente novamente"
+                    text="Tente novamente!"
                 }
                 document.getElementById("result").innerHTML=text
             }
             else{
-                text="Comlete primeiro o puzzle pela ordem certa"
+                text="Complete primeiro o puzzle pela ordem correta."
                 document.getElementById("result").innerHTML=text
             }
             function checkPuzzle(){
@@ -148,10 +163,8 @@
     <body>
        
   
-        <a-scene embedded arjs>
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
             <a-entity  progressive-controls></a-entity>
-            
-            <a-text value="Coloque os excertos musicais pela ordem da sequencia musical" color="black"  scale="1 1 1" position="-2 3.5 -6"></a-text>
 
             <a-box material="color: white; opacity: 0.5; transparent: true" position="-2.5 2 -7.1" ></a-box >
             <a-text value="Primeiro Excerto" color="black" scale="0.5 0.5 0.5" position="-2.6 1.4 -6"></a-text>

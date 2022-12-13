@@ -1,0 +1,86 @@
+.fa-list{
+    right: 20px;
+    top: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+  }
+  
+  .dropdown-content {
+    right: 60px;
+    top: 50px;
+    display: none;
+    position: absolute;
+    background-color: #a15538;
+    border-radius: 1rem;
+
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: aliceblue;
+    font-family: 'Audiowide';
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: gray;
+  }
+  
+  .show {
+    display: block;
+  }
+  .tasks{
+    margin: 2rem 2rem 2rem 2rem;
+  }
+  
+  .fa-cog{
+  right: 3rem;
+  bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  }
+  .fa-times{
+  left: 3rem;
+  bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  }
+  .fa-undo{
+  left: 3rem;
+  top: 3rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  }
+
+
+  .parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .params {
+
+  margin:auto;
+  margin-top: 8rem;
+  background-color: #a15538;
+  color:aliceblue;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: 'Audiowide';
+  font-size: 0.7rem;
+  }
+ 

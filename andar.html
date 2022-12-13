@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"   href="/css/andar.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <title>MuzzPuzzle</title>
 </head>
@@ -104,12 +105,14 @@
 
 
         </script>
-
-        <div class="sobrepor">
-            Número de metros andados
-            <h2  id="p1" class="contador">0.0</h2>
-            <button class="find-location"  onclick="myFunction()">Começar</button>
+        <div class="parent">
+            <div class="params">
+                Número de metros andados:
+                <h2  id="p1" class="contador">0.0</h2>
+                <button class="menuButtons"  onclick="myFunction()">Começar</button>
+            </div>
         </div>
+        
 
         <i class="fas fa-undo" onclick="location.href='emjogo'"></i>
         <body style='margin : 0px; overflow: hidden;'>
@@ -125,7 +128,7 @@
                
             </script>
            
-          <a-scene embedded arjs ="source:webcam;">
+          <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
            
             <a-camera 
                 locationfinder 

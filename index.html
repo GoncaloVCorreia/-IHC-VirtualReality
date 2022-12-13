@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css"   href="/css/Home_Index_style.css">
+    <link rel="stylesheet" type="text/css"   href="/css/index_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <title>MuzzPuzzle</title>
 </head>
@@ -12,11 +12,15 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.4/aframe/build/aframe-ar.js"></script>
     
-    <div class="params">
-      <h2>Estilo : <%= tipo %></h2>
-      <h2>Música : <%= music %></h2>
-      <h2>Peças apanhadas   <%= num %>/<%= total %></h2>
+    <div class="parent">
+      <div class="params">
+        <h2>Estilo : <%= tipo %></h2>
+        <h2>Música : <%= music %></h2>
+        <h2>Peças apanhadas :   <%= num %>/<%= total %></h2>
+      </div>
+    
     </div>
+    
 
      <i class="fas fa-list" onclick="myFunction()" ></i>
 
@@ -37,7 +41,7 @@
       <body style='margin : 0px; overflow: hidden;'>
         
       
-        <a-scene embedded arjs >
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
          
           <a-marker preset="hiro">
 
