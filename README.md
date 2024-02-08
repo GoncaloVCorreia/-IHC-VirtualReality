@@ -1,4 +1,8 @@
-# Puzzle-IHC
+# IHC
+Virtual Reality puzzle implementation
 
-Correr:
+Objective:
+
+
+Run
 node server.js
